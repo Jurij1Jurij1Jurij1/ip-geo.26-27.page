@@ -127,7 +127,7 @@
     <form id="upload-form">
       <!-- Identifikacija -->
       <div class="form-group">
-        <label for="password">Univerzalno geslo</label>
+        <label for="password">Geslo</label>
         <input type="password" id="password" required placeholder="Vnesite geslo za dostop">
       </div>
 
@@ -144,7 +144,7 @@
       <div class="form-group">
         <label for="slug">Slug / ID</label>
         <input type="text" id="slug" maxlength="6" required placeholder="Natančno 6 znakov (npr. ab1234)">
-        <div class="hint">Identifikator mora vsebovati točno 6 znakov.</div>
+        <div class="hint">Identifikator mora biti pravilen!</div>
       </div>
 
       <!-- Datoteke -->
@@ -182,7 +182,7 @@
       // Preverjanje dolžine sluga (točno 6 znakov)
       const slugValue = slugInput.value.trim();
       if (slugValue.length !== 6) {
-        errorBox.textContent = "Napaka: Slug / ID mora biti dolg natančno 6 znakov!";
+        errorBox.textContent = "Napaka: Slug / ID ni pravilen!";
         errorBox.style.display = 'block';
         slugInput.focus();
         return;
