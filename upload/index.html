@@ -224,8 +224,9 @@
           errorBox.style.display = 'block';
         }
       } catch (err) {
-        errorBox.textContent = "Prišlo je do napake pri povezavi s strežnikom.";
+        errorBox.textContent = "Tehnična napaka: " + err.message;
         errorBox.style.display = 'block';
+        console.error("Fetch error:", err);
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Oddaj nalogo";
