@@ -209,10 +209,10 @@
         submitBtn.disabled = true;
         submitBtn.textContent = "Nalaganje v teku...";
 
-        const response = await fetch('https://upload.api.geo.treved.dev', {
-          method: 'POST',
-          body: formData
-        });
+        const response = await fetch('https://ip-geo-upload.jurijx3x3x3.workers.dev', {
+      method: 'POST',
+      body: formData
+    });
 
         const result = await response.json();
 
