@@ -175,7 +175,8 @@
     const errorBox = document.getElementById('error-msg');
     const slugInput = document.getElementById('slug');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('async function(e) {' --> 
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
       errorBox.style.display = 'none';
 
