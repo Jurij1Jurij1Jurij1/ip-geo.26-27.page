@@ -175,7 +175,6 @@
     const errorBox = document.getElementById('error-msg');
     const slugInput = document.getElementById('slug');
 
-    form.addEventListener('async function(e) {' --> 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       errorBox.style.display = 'none';
@@ -193,10 +192,10 @@
       const confirmed = confirm("Ali si prepričan, da želiš oddati nalogo? Tega dejanja kasneje ni mogoče popraviti ali razveljaviti!");
       
       if (!confirmed) {
-        return; // Uporabnik je preklical
+        return;
       }
 
-      // Zbiranje podatkov za kasnejše pošiljanje na Worker
+      // Zbiranje podatkov za pošiljanje na Worker
       const formData = new FormData();
       formData.append('password', document.getElementById('password').value);
       formData.append('name', document.getElementById('name').value);
@@ -206,9 +205,9 @@
       formData.append('pdfFile', document.getElementById('file-pdf').files[0]);
       formData.append('notes', document.getElementById('notes').value);
 
+      const submitBtn = form.querySelector('.btn-submit');
+
       try {
-        // Prikaz opozorila o nalaganju (opcijsko)
-        const submitBtn = form.querySelector('.btn-submit');
         submitBtn.disabled = true;
         submitBtn.textContent = "Nalaganje v teku...";
 
@@ -230,7 +229,6 @@
         errorBox.textContent = "Prišlo je do napake pri povezavi s strežnikom.";
         errorBox.style.display = 'block';
       } finally {
-        const submitBtn = form.querySelector('.btn-submit');
         submitBtn.disabled = false;
         submitBtn.textContent = "Oddaj nalogo";
       }
