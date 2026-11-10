@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP-GEO 26/27</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    p.intro {
+      font-size: 1.05rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #0070f3;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background-color: #0051a2;
+    }
+    .btn-secondary {
+      background-color: #10b981;
+      color: #ffffff;
+    }
+    .btn-secondary:hover {
+      background-color: #059669;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #4b5563;
+      border-color: #d1d5db;
+    }
+    .btn-outline:hover {
+      background-color: #f3f4f6;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Dobrodošli</h1>
+    <p class="intro">
+      Tukaj bo preprosta predstavitev strani. Opiši namen aplikacije ali dodaj kratka navodila za uporabnike.
+    </p>
+
+    <div class="actions">
+      <a href="/download" class="btn btn-primary">Prenesi potrebne datoteke</a>
+      <a href="/upload" class="btn btn-secondary">Naloži ustvarjene datoteke</a>
+      <a href="/navodila" class="btn btn-outline">Navodila</a>
+    </div>
+  </div>
+
+</body>
+</html>
