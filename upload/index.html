@@ -164,19 +164,19 @@
         <textarea id="notes" placeholder="Če želite karkoli posebnega sporočiti..."></textarea>
       </div>
 
-      <button type="submit" class="btn-submit">Oddaj nalogo</button>
+      <!-- Prej: <button type="submit" class="btn-submit">Oddaj nalogo</button> -->
+<button type="button" id="submit-btn" class="btn-submit">Oddaj nalogo</button>
     </form>
 
     <a href="/home/index.html" class="back-link">&larr; Nazaj na domačo stran</a>
   </div>
 
-  <script>
-    const form = document.getElementById('upload-form');
+<script>
+    const submitBtn = document.getElementById('submit-btn');
     const errorBox = document.getElementById('error-msg');
     const slugInput = document.getElementById('slug');
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
+    submitBtn.addEventListener('click', async function() {
       errorBox.style.display = 'none';
 
       // Preverjanje dolžine sluga (točno 6 znakov)
@@ -205,8 +205,6 @@
       formData.append('pdfFile', document.getElementById('file-pdf').files[0]);
       formData.append('notes', document.getElementById('notes').value);
 
-      const submitBtn = form.querySelector('.btn-submit');
-
       try {
         submitBtn.disabled = true;
         submitBtn.textContent = "Nalaganje v teku...";
@@ -220,7 +218,7 @@
 
         if (response.ok && result.success) {
           alert("Naloga je bila uspešno oddana!");
-          form.reset();
+          document.getElementById('upload-form').reset();
         } else {
           errorBox.textContent = "Napaka pri oddaji: " + (result.error || "Neznana napaka");
           errorBox.style.display = 'block';
