@@ -22,6 +22,10 @@
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
     .container {
       max-width: 750px;
@@ -149,6 +153,12 @@ Ko končate, pojdite na podstran za **nalaganje** ter oddajte svoje delo.
     const rawMarkdown = document.getElementById('markdown-content').textContent;
     document.getElementById('content').innerHTML = marked.parse(rawMarkdown);
   </script>
+
+  <script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+</script>
 
 </body>
 </html>
