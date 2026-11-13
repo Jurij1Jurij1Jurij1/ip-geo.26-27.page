@@ -142,9 +142,9 @@
       </div>
 
       <div class="form-group">
-        <label for="slug">Slug / ID</label>
-        <input type="text" id="slug" maxlength="6" required placeholder="Vnesi svoj slug / ID, ki si ga prejel">
-        <div class="hint">Identifikator mora biti pravilen!</div>
+        <label for="slug">Uporabniško ime</label>
+        <input type="text" id="slug" maxlength="6" required placeholder="Vnesi svoje uporabniško ime, ki si ga prejel">
+        <div class="hint">Uporabniško ime mora biti pravilno!</div>
       </div>
 
       <!-- Datoteke -->
@@ -182,7 +182,7 @@
       // Preverjanje dolžine sluga (točno 6 znakov)
       const slugValue = slugInput.value.trim();
       if (slugValue.length !== 6) {
-        errorBox.textContent = "Napaka: Slug / ID ni pravilen!";
+        errorBox.textContent = "Napaka: uporabniško ima ni pravilno!!";
         errorBox.style.display = 'block';
         slugInput.focus();
         return;
